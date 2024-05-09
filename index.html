@@ -1,42 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>PROFILE</title>
      <style>
-          @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Mono+One&display=swap');
 
-          *{
-               margin:0;
-               padding:0;
+          * {
+               margin: 0;
+               padding: 0;
+               font-family: "Rubik Mono One", monospace;
           }
 
-          body{
-               background-color:black;
+          body {
+               background-color: black;
           }
-          
-          h1{
-               text-align:center;
-               font-size:30px
-               font-family: "Noto Sans Thai", sans-serif;
-               margin-top:40%;
-               color:white;
+
+          h1 {
+
+               font-weight: 500;
+               text-align: center;
+               font-size: 90px;
+               font-family: "Rubik Mono One", monospace;
+               padding: 10px;
+               margin-top: 250px;
+               color: white;
                text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+               animation: fadeInDown 1s ease-in-out;
           }
 
-          a{
-              text-decoration:none;
-               margin:20px auto 10px auto;
-               text-align:center;
-               color:white;
-               background-color:blue;
+
+          a {
+               animation: fadeInDown 1s ease-in;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100px;
+               text-decoration: none;
+               color: white;
+               font-size: 70px;
+               margin-top: 30px;
+               transition: 0.3s;
           }
 
+          a:hover{
+               
+               transform: scale(1.2);
+           
+               background-color: orange;
+      
+        
+          }
+
+          #popup-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+
+
+          @keyframes fadeInDown {
+               from {
+                    opacity: 0;
+                    transform: translateY(-50px);
+               }
+
+               to {
+                    opacity: 1;
+                    transform: translateY(0);
+               }
+          }
+
+          @media only screen and (max-width: 600px) {
+     h1 {
+          font-size: 60px; 
+          margin-top: 100px; 
+     }
+
+     a {
+          font-size: 40px;
+          margin-top: 20px; 
+     }
+
+     #popup-image {
+            width: 100%;
+        }
+}
      </style>
 </head>
+
 <body>
      <h1>My name is Wansukkri</h1>
-     <a href="test.html">hello world</a>
+     <a href="#" id="show-popup"> >click here< </a>
+     <img  src="s.png" alt="Popup Image" id="popup-image">
+
+
+     <script>
+          // Get the elements
+          const showPopupButton = document.getElementById('show-popup');
+          const popupImage = document.getElementById('popup-image');
+          
+          // Add event listener to the button
+          showPopupButton.addEventListener('click', function() {
+              // Show the popup image
+              popupImage.style.display = 'block';
+          });
+      </script>
 </body>
+
 </html>
